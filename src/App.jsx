@@ -62,6 +62,11 @@ function App() {
     setOperator("")
     setPreviousInput("");
   }
+
+  function handlePercentage() {
+    setInput(prev=>prev/100)
+    
+  }
  
 
   return (
@@ -72,7 +77,7 @@ function App() {
       <input id="div1" className="bg-gray-500 text-white font-bold text-right text-4xl" value={input || result}/>
       <button id="div2" className='bg-gray-300 rounded-none border-b-gray-600 border-l-gray-600 w-32 h-28' onClick={handleErase}>AC</button>
 	    <button id="div3" className='bg-gray-300 rounded-none  border-b-gray-600 border-l-gray-600 w-32 h-28'>+/-</button>
-	    <button id="div4" className='bg-gray-300 rounded-none  border-b-gray-600 border-l-gray-600 w-32 h-28'>%</button>
+	    <button id="div4" className='bg-gray-300 rounded-none  border-b-gray-600 border-l-gray-600 w-32 h-28' onClick={handlePercentage}>%</button>
 	    <button id="div5" className='bg-[#ff2700] rounded-none ] border-b-gray-600 border-l-gray-600 w-32 h-28' value={'/'} onClick={handleOperatorClick}>/</button>
 	    <button id="div6" className='bg-gray-300 rounded-none  border-b-gray-600 border-l-gray-600' value={7}  onClick={handleInput} >7</button>
 	    <button id="div7" className='bg-gray-300 rounded-none  border-b-gray-600 border-l-gray-600' value={4} onClick={handleInput}>4</button>
