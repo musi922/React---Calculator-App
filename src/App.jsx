@@ -20,9 +20,15 @@ function App() {
 
   function handleOperatorClick(event) {
     const {value} = event.target
+    if (result !== null) {
+      setPreviousInput(result)
+      setResult(null)
+    }
+    else{
+      setPreviousInput(input)
+    }
+    setInput("")
     setOperator(value)
-    setPreviousInput(input)
-     setInput("")
   }
   
   function handleResult() {
@@ -64,8 +70,7 @@ function App() {
   }
 
   function handlePercentage() {
-    setInput(prev=>prev/100)
-    
+      setInput(prev=>prev/100) 
   }
 
   function handleNegatives() {
