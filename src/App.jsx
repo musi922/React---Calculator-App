@@ -11,7 +11,7 @@ function App() {
     const {value,name} = event.target
     setInput(prev=>({
       ...prev,
-      [name]:value
+      [name]: prev[name] + value
     }))
     
   }
